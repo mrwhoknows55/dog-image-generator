@@ -1,7 +1,12 @@
 # Random Dog Image Generator
 
-Simple app which get random dog images from api and store it in-memory LRU cache 
+Simple app which gets random dog images from api and store it in-memory LRU cache 
 
+### You can download & install latest app ⬇
+
+[![Dog Image Generator APK](https://img.shields.io/badge/Download-Latest-App?style=for-the-badge&logo=android)](https://github.com/mrwhoknows55/dog-image-generator/releases/download/1.0/dog-image-generator-app-release.apk)
+
+### Demo [Video](https://drive.google.com/file/d/1Hiu99s2800xm0luPb7fA7b_uNXV3vEJr/view?usp=share_link)
 
 ### Technologies and Libraries used:
 
