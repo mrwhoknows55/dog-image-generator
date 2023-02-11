@@ -7,7 +7,9 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import com.mrwhoknows.dogimagegenerator.databinding.FragmentGenerateDogsBinding
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class GenerateDogsFragment : Fragment() {
     private lateinit var binding: FragmentGenerateDogsBinding
     private val viewModel by viewModels<GenerateDogsViewModel>()
