@@ -13,7 +13,16 @@ class LRUCache<K, V>(private val maxSize: Int) : Cache<K, V> {
         cache[key] = value
     }
 
-    override fun get(key: K): V? = cache[key]
+    override fun get(key: K): V? {
+        return if (cache.containsKey(key)) {
+            val value = cache[key]
+            cache.remove(key)
+            cache[key] = value!!
+            value
+        } else {
+            null
+        }
+    }
 
     override fun getAllKeys(): List<K> = cache.keys.toList().reversed()
 
