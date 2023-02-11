@@ -8,7 +8,6 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 import okhttp3.OkHttpClient
 import okhttp3.Request
-import timber.log.Timber
 import javax.inject.Inject
 
 class DogRepository @Inject constructor(
@@ -34,5 +33,9 @@ class DogRepository @Inject constructor(
     }
 
     fun getAllBitmapsFromCache(): List<Bitmap> = lruCache.getAllValues()
+
+    fun clearDogImagesCache() {
+        lruCache.clearAll()
+    }
 
 }

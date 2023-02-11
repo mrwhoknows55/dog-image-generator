@@ -28,4 +28,9 @@ class ViewDogsViewModel @Inject constructor(
         Timber.i("getRecentlyViewedDogBitmaps: ${bitmaps.size}")
         _dogImages.postValue(bitmaps)
     }
+
+    fun clearDogs() {
+        repository.clearDogImagesCache()
+        getRecentlyViewedDogBitmaps()
+    }
 }
