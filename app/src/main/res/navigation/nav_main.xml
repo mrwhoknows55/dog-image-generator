@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_main"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.mrwhoknows.dogimagegenerator.ui.home.HomeFragment"
+        android:label="Home" >
+        <action
+            android:id="@+id/action_homeFragment_to_generateDogsFragment"
+            app:destination="@id/generateDogsFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_viewDogsFragment"
+            app:destination="@id/viewDogsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/viewDogsFragment"
+        android:name="com.mrwhoknows.dogimagegenerator.ui.view_dogs.ViewDogsFragment"
+        android:label="View Dogs" />
+    <fragment
+        android:id="@+id/generateDogsFragment"
+        android:name="com.mrwhoknows.dogimagegenerator.ui.generate_dog.GenerateDogsFragment"
+        android:label="Generate Dogs" />
+</navigation>

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvHeader"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:maxEms="10"
+        android:maxLines="2"
+        android:text="@string/random_dog_generator"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.25" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnGenerateDogs"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:maxEms="12"
+        android:maxLines="1"
+        android:paddingHorizontal="8dp"
+        android:text="@string/generate_dogs"
+        android:textAllCaps="false"
+        app:layout_constraintBottom_toTopOf="@+id/btnViewDogs"
+        app:layout_constraintEnd_toEndOf="@+id/btnViewDogs"
+        app:layout_constraintStart_toStartOf="@+id/btnViewDogs" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnViewDogs"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:maxEms="16"
+        android:maxLines="2"
+        android:paddingHorizontal="8dp"
+        android:text="@string/my_recently_generated_dogs"
+        android:textAllCaps="false"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.65" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
