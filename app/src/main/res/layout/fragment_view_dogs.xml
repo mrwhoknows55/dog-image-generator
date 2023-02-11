@@ -25,11 +25,11 @@
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btnClearDogs"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        style="@style/Theme.Button"
+        android:layout_height="0dp"
+        app:layout_constraintDimensionRatio="2.8"
         android:layout_marginTop="16dp"
-        android:background="@color/blue"
         android:text="@string/clear_dogs"
-        android:textColor="@color/white"
         app:layout_constraintEnd_toEndOf="@+id/rvDogsList"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/rvDogsList" />
