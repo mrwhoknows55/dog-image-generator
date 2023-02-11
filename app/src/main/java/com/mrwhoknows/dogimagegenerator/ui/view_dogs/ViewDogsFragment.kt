@@ -8,6 +8,7 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView.HORIZONTAL
+import com.google.android.material.snackbar.Snackbar
 import com.mrwhoknows.dogimagegenerator.databinding.FragmentViewDogsBinding
 import com.mrwhoknows.dogimagegenerator.util.setSafeOnClickListener
 import dagger.hilt.android.AndroidEntryPoint
@@ -44,13 +45,30 @@ class ViewDogsFragment : Fragment() {
     private fun setupClickListeners() {
         binding.btnClearDogs.setSafeOnClickListener {
             viewModel.clearDogs()
+            Snackbar.make(binding.root, "All Dog Images Cleared", Snackbar.LENGTH_SHORT).show()
         }
     }
 
     private fun setupObservers() {
         viewModel.dogImages.observe(viewLifecycleOwner) {
             Timber.i("dogImages(${it.size}): $it")
+            updateContentVisibility(it.isNotEmpty())
             adapter.submitList(it)
+        }
+    }
+
+    private fun updateContentVisibility(isContentVisible: Boolean) {
+        binding.apply {
+
+            if (isContentVisible) {
+                tvErrorMsg.visibility = View.GONE
+                rvDogsList.visibility = View.VISIBLE
+                btnClearDogs.visibility = View.VISIBLE
+            } else {
+                rvDogsList.visibility = View.GONE
+                btnClearDogs.visibility = View.GONE
+                tvErrorMsg.visibility = View.VISIBLE
+            }
         }
     }
 }

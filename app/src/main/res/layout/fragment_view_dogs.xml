@@ -10,28 +10,62 @@
         android:id="@+id/rvDogsList"
         android:layout_width="0dp"
         android:layout_height="0dp"
+        android:layout_marginBottom="8dp"
         android:clipToPadding="false"
+        android:fadeScrollbars="false"
         android:paddingHorizontal="8dp"
         android:scrollbars="horizontal"
-        app:layout_constraintDimensionRatio="1.3"
-        app:layout_constraintVertical_bias="0.2"
+        app:layout_constraintBottom_toTopOf="@+id/btnClearDogs"
+        app:layout_constraintEnd_toStartOf="@+id/rightGuideline"
+        app:layout_constraintStart_toStartOf="@+id/leftGuideline"
+        app:layout_constraintTop_toTopOf="@+id/topGuideline"
         tools:itemCount="4"
-        tools:listitem="@layout/layout_image_item"
+        tools:listitem="@layout/layout_image_item" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnClearDogs"
+        style="@style/Theme.Button"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:text="@string/clear_dogs"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintDimensionRatio="2.8"
+        app:layout_constraintEnd_toStartOf="@+id/rightGuideline"
+        app:layout_constraintStart_toStartOf="@+id/leftGuideline"
+        app:layout_constraintTop_toTopOf="@+id/topGuideline"
+        app:layout_constraintVertical_bias="0.75" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvErrorMsg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/no_dogs_found_please_generate"
+        android:textSize="20sp"
+        android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/btnClearDogs"
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/topGuideline"
         android:layout_width="wrap_content"
-        style="@style/Theme.Button"
-        android:layout_height="0dp"
-        app:layout_constraintDimensionRatio="2.8"
-        android:layout_marginTop="16dp"
-        android:text="@string/clear_dogs"
-        app:layout_constraintEnd_toEndOf="@+id/rvDogsList"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/rvDogsList" />
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.1" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/leftGuideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.15" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/rightGuideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.85" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

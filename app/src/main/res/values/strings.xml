@@ -5,4 +5,5 @@
     <string name="generate_dogs">Generate Dogs</string>
     <string name="generate">Generate</string>
     <string name="clear_dogs">Clear Dogs</string>
+    <string name="no_dogs_found_please_generate">No Dogs Found Please Generate!</string>
 </resources>
