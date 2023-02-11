@@ -1,4 +1,4 @@
-package com.mrwhoknows.dogimagegenerator
+package com.mrwhoknows.dogimagegenerator.ui
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
