@@ -1,8 +1,10 @@
 package com.mrwhoknows.dogimagegenerator.di
 
 import android.content.Context
+import android.graphics.Bitmap
 import com.mrwhoknows.dogimagegenerator.BuildConfig
 import com.mrwhoknows.dogimagegenerator.DogApplication
+import com.mrwhoknows.dogimagegenerator.cache.LRUCache
 import com.mrwhoknows.dogimagegenerator.net.DogApiService
 import dagger.Module
 import dagger.Provides
@@ -62,4 +64,8 @@ object AppModule {
     @Singleton
     fun providesDogApiService(retrofit: Retrofit): DogApiService =
         retrofit.create(DogApiService::class.java)
+
+    @Provides
+    @Singleton
+    fun providesLruCacheStringBitmap() = LRUCache<String, Bitmap>(20)
 }
